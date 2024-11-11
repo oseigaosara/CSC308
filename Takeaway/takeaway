@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main() {
+    char type;
+    printf("Enter the type of input (c for character, f for float, i for integer): ");
+    scanf(" %c", &type);
+
+    switch (type) {
+        case 'c': {
+            char inputChar;
+            printf("Enter a character: ");
+            scanf(" %c", &inputChar);
+            printf("Next 4 characters:\n");
+            for (int i = 1; i <= 4; i++) {
+                char nextChar = inputChar + i;
+                printf("Character: %c, ASCII code: %d, Size: %lu bytes\n", nextChar, nextChar, sizeof(nextChar));
+            }
+            break;
+        }
+        case 'f': {
+            float inputFloat;
+            printf("Enter a float: ");
+            scanf("%f", &inputFloat);
+            printf("Next 4 floats in multiples of 3:\n");
+            for (int i = 1; i <= 4; i++) {
+                float nextFloat = inputFloat + (3 * i);
+                printf("Float: %.2f, Size: %lu bytes\n", nextFloat, sizeof(nextFloat));
+            }
+            break;
+        }
+        case 'i': {
+            int inputInt;
+            printf("Enter an integer: ");
+            scanf("%d", &inputInt);
+            printf("Next 4 integers in multiples of 3:\n");
+            for (int i = 1; i <= 4; i++) {
+                int nextInt = inputInt + (3 * i);
+                printf("Integer: %d, Size: %lu bytes\n", nextInt, sizeof(nextInt));
+            }
+            break;
+        }
+        default:
+            printf("Invalid input type. Please enter 'c', 'f', or 'i'.\n");
+    }
+
+    return 0;
+}

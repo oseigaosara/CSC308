@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int age;
+    char experience;
+
+    // Prompt user for input
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("Are you experienced? (y/n): ");
+    scanf(" %c", &experience);
+
+    // Determine salary based on experience and age
+    if (experience == 'y' || experience == 'Y') {
+        if (age >= 40) {
+            printf("Your salary is N560,000.\n");
+        } else if (age >= 30 && age < 40) {
+            printf("Your salary is N480,000.\n");
+        } else if (age < 28) {
+            printf("Your salary is N300,000.\n");
+        } else {
+            printf("Your salary is N100,000.\n"); // Fallback for experienced but not meeting above conditions (age between 28-30)
+        }
+    } else {
+        printf("Your salary is N100,000.\n"); // Inexperienced case
+    }
+
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    char inputChar;
+    
+    // Prompt the user to enter a character
+    printf("Enter a character between A and J: ");
+    scanf(" %c", &inputChar);
+
+    // Validate input
+    if (inputChar < 'A' || inputChar > 'J') {
+        printf("Invalid input. Please enter a character between A and J.\n");
+    } else {
+        printf("Next 6 characters:\n");
+        for (int i = 1; i <= 6; i++) {
+            printf("%c ", inputChar + i);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
